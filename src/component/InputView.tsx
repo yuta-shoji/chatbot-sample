@@ -17,24 +17,27 @@ export function InputView() {
     }
 
     return (
-        <div className={` w-full bg-gray-700 rounded-md `}>
-                <textarea
-                    ref={textareaRef}
-                    value={value}
-                    onInput={handleInput}
-                    className={`h-12 w-full p-4 text-sm rounded-lg bg-gray-700 outline-none`}
-                    placeholder="Chatbotにメッセージを送る"
-                    required
-                />
-            <div className={`flex justify-between p-2`}>
+        <div className={`
+            w-full bg-gray-700 rounded-xl
+            shadow-[0_-10px_40px_rgba(60,60,60,1)]
+        `}>
+            <textarea
+                ref={textareaRef}
+                value={value}
+                onInput={handleInput}
+                className={`h-12 w-full p-4 text-sm rounded-lg bg-gray-700 outline-none`}
+                placeholder="Chatbotにメッセージを送る"
+                required
+            />
+            <div className={`flex justify-between pb-4 pr-4 pl-4`}>
                 <button>
-                    <HiOutlinePlus/>
+                    <HiOutlinePlus className={`hover:text-green-300`}/>
                 </button>
                 <button
                     type="submit"
                     className=""
                 >
-                    <IoSend/>
+                    <IoSend className={`hover:text-green-300`}/>
                 </button>
             </div>
         </div>

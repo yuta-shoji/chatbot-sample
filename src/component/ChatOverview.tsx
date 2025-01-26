@@ -1,5 +1,5 @@
 import {Chat} from "../model/Chat.ts";
-import {useAtom, useSetAtom} from "jotai/index";
+import {useAtom} from "jotai/index";
 import {JotaiChatStates} from "../jotai/JotaiStetes.ts";
 
 interface Props {
@@ -15,7 +15,7 @@ export function ChatOverview(
         <div
             className={`
                 min-h-12 flex items-center
-                mr-2 ml-2 p-2
+                mr-2 ml-2 pr-3 pl-3
                 bg-gray-800 opacity-60
                 cursor-pointer
                 rounded-md
@@ -23,7 +23,7 @@ export function ChatOverview(
             `}
             onClick={() => onClickChatOverview(chat)}
         >
-            <div className="text-white opacity-100">{chat.title}</div>
+            <div className="text-white opacity-100 truncate">{chat.title}</div>
         </div>
     )
 }
@@ -32,7 +32,6 @@ function useChatOverview() {
     const [_, setSelectedChat] = useAtom(JotaiChatStates.selectedChat)
 
     const onClickChatOverview = (chat: Chat) => {
-        console.log({chat})
         setSelectedChat(chat)
     }
 
